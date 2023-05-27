@@ -1,0 +1,17 @@
+npm i sequelize mysql2
+
+const {Sequelize} = require("sequelize");
+
+const sequelize = new Sequelize("tên database", "root", "mật khẩu", {
+	host: "localhost";
+	dialect: "tên app database" vd: "mysql"
+})
+
+const checkConnect = asyn () => {
+	try {
+		await sequelize.authenticate();
+		console.log("thành công");
+	}catch(error) {
+		console.log("thất bại");
+	}
+}
